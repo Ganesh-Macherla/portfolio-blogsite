@@ -3,8 +3,8 @@ import tailwind from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://ganesh-macherla.github.io/astro-paper/",
-  base: "/astro-paper",
+  site: "https://ganesh-macherla.github.io",
+  base: "/portfolio-blogsite",
 
   vite: {
     plugins: [tailwind()],
