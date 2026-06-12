@@ -5,20 +5,51 @@ import Layout from "@/layouts/Layout.astro";
 import Tag from "@/components/Tag.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import getUniqueTags from "@/utils/getUniqueTags";
+import getSortedPosts from "@/utils/getSortedPosts";
+import { slugifyStr } from "@/utils/slugify";
 import { SITE } from "@/config";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blog", ({ data }) => !data.draft);
 
-let tags = getUniqueTags(posts);
+const sortedPosts = getSortedPosts(posts);
 ---
 
 <Layout title={`Tags | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
-    <ul class="flex flex-wrap gap-6">
-      {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} />)}
-    </ul>
+
+  <Main
+    pageTitle="Tags"
+    pageDesc="Tags organized by post date."
+  >
+    <div class="space-y-10">
+      {
+        sortedPosts.map(post => (
+          <div class="border-b border-border pb-6">
+            <h2 class="mb-4 text-2xl font-semibold text-accent">
+              {post.data.title}
+            </h2>
+
+            <p class="mb-4 text-sm opacity-70">
+              {post.data.pubDatetime.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
+            </p>
+
+            <ul class="flex flex-wrap gap-4">
+              {post.data.tags.map(tag => (
+                <Tag
+                  tag={slugifyStr(tag)}
+                  tagName={tag}
+                />
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
   </Main>
+
   <Footer />
 </Layout>
