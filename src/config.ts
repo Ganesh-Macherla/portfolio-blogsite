@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://ganesh-macherla.github.io/astro-paper/",
+  website: "https://ganesh-macherla.github.io/portfolio-blogsite/",
   author: "Ganesh Macherla",
   profile: "https://github.com/Ganesh-Macherla",
   desc: "My safe space",
@@ -16,12 +16,12 @@ export const SITE = {
   showArchives: false,
   showBackButton: true,
 
-  basePath: "/astro-paper",
+  basePath: "/portfolio-blogsite",
 
   editPost: {
     enabled: true,
     text: "Edit page",
-    url: "https://github.com/Ganesh-Macherla/astro-paper",
+    url: "https://github.com/Ganesh-Macherla/portfolio-blogsite",
   },
 
   dynamicOgImage: true,
