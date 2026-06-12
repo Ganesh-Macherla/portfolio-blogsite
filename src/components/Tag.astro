@@ -1,5 +1,6 @@
 ---
 import IconHash from "@/assets/icons/IconHash.svg";
+import { SITE } from "@/config";
 
 type Props = {
   tag: string;
@@ -12,8 +13,7 @@ const { tag, tagName, size = "lg" } = Astro.props;
 
 <li>
   <a
-    href={`/tags/${tag}/`}
-    transition:name={tag}
+    href={`${SITE.basePath}/tags/${tag}/`}
     class:list={[
       "flex items-center gap-0.5",
       "border-b-2 border-dashed border-foreground",
