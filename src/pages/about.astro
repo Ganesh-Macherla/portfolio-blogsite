@@ -1,0 +1,279 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<Layout title="About | Machu Archives">
+  <Header />
+
+  <main class="app-layout">
+    <!-- HERO -->
+    <section class="animate-hero border-b border-border pb-10 pt-8">
+      <p class="mb-3 text-sm uppercase tracking-[0.3em] opacity-70">
+        About Me
+      </p>
+
+      <h1 class="text-5xl font-bold leading-tight sm:text-6xl">
+        Ganesh Macherla
+      </h1>
+
+      <p class="mt-4 max-w-3xl text-lg opacity-80">
+        developer, builder, tech enthusiast, professional overthinker,
+        occasional crashout specialist, and someone who loves documenting life just to make a clown of himself..be it online or offline.
+      </p>
+    </section>
+
+    <!-- QUICK INFO CARDS -->
+    <section
+      class="animate-section-delay-1 mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      <div class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1">
+        <p class="text-sm opacity-60">Currently studying</p>
+        <h2 class="mt-2 text-2xl font-semibold">
+          Computer Science Student
+        </h2>
+      </div>
+
+      <div class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1">
+        <p class="text-sm opacity-60">Based In</p>
+        <h2 class="mt-2 text-2xl font-semibold">
+          Shiv Nadar University, Chennai
+        </h2>
+      </div>
+
+      <div class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1">
+        <p class="text-sm opacity-60">Interests</p>
+        <h2 class="mt-2 text-2xl font-semibold">
+          Systems, AI/ML, UI/UX
+        </h2>
+      </div>
+
+      <div class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1">
+        <p class="text-sm opacity-60">Music</p>
+        <h2 class="mt-2 text-2xl font-semibold">
+          Tabla, Classical Music for 8 Years
+        </h2>
+      </div>
+
+      <div class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1">
+        <p class="text-sm opacity-60">Philosophy</p>
+        <h2 class="mt-2 text-2xl font-semibold">
+          Learn → Build → Break
+        </h2>
+      </div>
+
+      <div class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1">
+        <p class="text-sm opacity-60">Current Obsession</p>
+        <h2 class="mt-2 text-2xl font-semibold">
+          Making Cool Stuff 
+        </h2>
+      </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="animate-section-delay-2 mt-16">
+      <h2 class="mb-6 text-3xl font-bold">
+        Things I Work With
+      </h2>
+
+      <div class="flex flex-wrap gap-3">
+        {[
+          "Java",
+          "Python",
+          "JavaScript",
+          "Git",
+          "GitHub",
+          "OpenCV",
+          "IoT",
+          "ESP32/Raspberry Pi",
+          "SQL",
+          "HTML/CSS",
+          "React/Next.js",
+          "C/C++",
+          "AI/ML",
+          "Tailwind CSS",
+          "Full-Stack"
+        ].map(skill => (
+          <div
+            class="rounded-full border border-border px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent"
+          >
+            {skill}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CURRENTLY EXPLORING -->
+    <section class="animate-section-delay-2 mt-16">
+      <h2 class="mb-6 text-3xl font-bold">
+        Currently Exploring
+      </h2>
+
+      <div class="space-y-4">
+        <div class="rounded-2xl border border-border p-5">
+          Building systems that automate workflows
+        </div>
+
+        <div class="rounded-2xl border border-border p-5">
+          Designing cleaner developer experiences
+        </div>
+
+        <div class="rounded-2xl border border-border p-5">
+          Experimenting with productivity tooling & behavioral systems
+        </div>
+
+        <div class="rounded-2xl border border-border p-5">
+          Learning scalable backend architecture
+        </div>
+
+        <div class="rounded-2xl border border-border p-5">
+          Improving UI motion & interaction design
+        </div>
+
+        <div class="rounded-2xl border border-border p-5">
+          Leaning AI fundamentals and Machine Learning concepts
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- STORY -->
+    <section class="animate-section-delay-2 mt-16">
+      <h2 class="mb-6 text-3xl font-bold">My Story</h2>
+
+      <div class="space-y-6 text-lg leading-8 opacity-90">
+        <p>
+          Yoo, welcome potato people!! I’m Ganesh Macherla, or Machu for short
+          (as people like to call me :p)
+        </p>
+
+        <p>
+          I’m someone who never expected to get pulled this deeply into
+          computers. At first, programming felt like just another boring subject for ners (no offence), but
+          the more I explored, the more I realized how insanely creative the
+          field actually gets.
+        </p>
+
+        <p>
+          Every concept opens another rabbit hole, and somehow there’s always
+          something new waiting on the other side. Curiosity is honestly what
+          keeps pulling me forward.
+        </p>
+
+        <p>
+          I’m still an amateur, not your brightest tool in the shed and have lots to learn. I haven’t built anything
+          "world changing" yet, and I’m definitely not someone trying to pretend
+          to be an expert. Most of my learning process still involves
+          experimenting with random ideas, breaking things constantly, and
+          spending hours trying to understand why something failed so
+          miserably.
+        </p>
+
+        <p>
+          Surprisingly, I enjoy that process.
+        </p>
+
+        <p>
+          Being wrong means there’s still more left to understand. And that’s
+           the most exciting part.
+        </p>
+
+        <p>
+          Over time, this space slowly became more than just a website. It became
+          a place where I could document my growth without feeling judged by others or embarrassed of the stupid things I do. This became a place where I share my projects and my failures,
+          through experimentation, sudden late-night thoughts and random observations.
+        </p>
+
+        <p>
+          So instead of treating this like a regular portfolio website that looks good on resume,
+          pretending to like everythings perfect, think of it more like my evolving
+          process or a documentary perhaps; where I learn from every success, and even more from every mistake. 
+          
+        </p>
+
+            <!-- SOCIALS -->
+    <section class="animate-section-delay-2 mt-16">
+      <h2 class="mb-6 text-3xl font-bold">
+        Find Me Online
+      </h2>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <a
+          href="https://github.com/Ganesh-Macherla"
+          target="_blank"
+          class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent"
+        >
+          <p class="text-sm opacity-60">GitHub</p>
+          <h3 class="mt-2 text-1xl font-semibold">
+            Ganesh-Macherla
+          </h3>
+
+          <p class="mt-3 opacity-80">
+            Where most of my experiments and projects live. I need to touch grass.
+          </p>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ganesh-macherla-05713b319/"
+          target="_blank"
+          class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent"
+        >
+          <p class="text-sm opacity-60">LinkedIn</p>
+          <h3 class="mt-2 text-1xl font-semibold">
+            Ganesh Macherla
+          </h3>
+
+          <p class="mt-3 opacity-80">
+            Professional updates, projects, work and experiences
+          </p>
+        </a>
+
+        <a
+          href="https://www.instagram.com/just._.percussion?igsh=MTRyYXR6ZGIyaGVmaA=="
+          target="_blank"
+          class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent"
+        >
+          <p class="text-sm opacity-60">Instagram</p>
+          <h3 class="mt-2 text-1xl font-semibold">
+            just._.percussion
+          </h3>
+
+          <p class="mt-3 opacity-80">
+            Music, edits, random thoughts, and everything in-between.
+          </p>
+        </a>
+
+        <a
+          href="mailto:myselfganesh65@example.com"
+          class="rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent"
+        >
+          <p class="text-sm opacity-60">Email</p>
+          <h3 class="mt-2 break-all text-1x1 font-semibold">
+            myselfganesh65@gmail.com
+            </h3>
+
+          <p class="mt-3 opacity-80">
+            For professional purposes, i guess
+          </p>
+        </a>
+      </div>
+    </section>
+
+        </p>
+        This one qoute really stands out to me, which says
+        </p>
+
+    <p class="mt-8 text-center text-2xl font-medium italic leading-relaxed text-accent opacity-90">
+    “Becoming is better than being.”
+    </p>
+
+    <p class="mt-2 text-right text-sm tracking-wide opacity-60">
+    — Carol Dweck
+    </p>
+    </main>
+
+    <Footer />
+    </Layout>
