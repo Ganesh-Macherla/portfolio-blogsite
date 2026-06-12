@@ -93,14 +93,13 @@ const nextPost =
   <main
     id="main-content"
     class:list={[
-      "app-layout pb-12 animate-page-enter",
+      "app-layout pb-12",
       { "mt-8": !SITE.showBackButton },
     ]}
     data-pagefind-body
   >
-    <div class="animate-post-header">
+    <div>
       <h1
-        transition:name={slugifyStr(title.replaceAll(".", "-"))}
         class="inline-block text-2xl font-bold text-accent sm:text-3xl"
       >
         {title}
@@ -125,7 +124,7 @@ const nextPost =
 
     <article
       id="article"
-      class="app-prose animate-post-content mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
+      class="app-prose mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
     >
       <Content />
     </article>
@@ -134,13 +133,13 @@ const nextPost =
 
     <EditPost class="sm:hidden" {hideEditPost} {post} />
 
-    <ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8 animate-fade-up">
+    <ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} size="sm" />)}
     </ul>
 
     <BackToTopButton />
 
-    <div class="animate-fade-up-delayed">
+    <div>
       <ShareLinks />
     </div>
 
@@ -149,7 +148,7 @@ const nextPost =
     <!-- Previous/Next Post Buttons -->
     <div
       data-pagefind-ignore
-      class="grid grid-cols-1 gap-6 sm:grid-cols-2 animate-fade-up-delayed"
+      class="grid grid-cols-1 gap-6 sm:grid-cols-2"
     >
       {
         prevPost && (
@@ -189,70 +188,6 @@ const nextPost =
 
   <Footer />
 </Layout>
-
-<style is:global>
-  /* Entire page entrance */
-  .animate-page-enter {
-    animation: smoothPageEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  @keyframes smoothPageEnter {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-
-  /* Header animation */
-  .animate-post-header {
-    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  /* Main article animation */
-  .animate-post-content {
-    animation: smoothContentReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  @keyframes smoothContentReveal {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-      filter: blur(8px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0px);
-      filter: blur(0px);
-    }
-  }
-
-  /* Generic fade up */
-  .animate-fade-up {
-    animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .animate-fade-up-delayed {
-    animation: fadeUp 1.1s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-</style>
 
 <script is:inline data-astro-rerun>
   /** Create a progress indicator
