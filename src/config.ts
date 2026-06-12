@@ -19,7 +19,7 @@ export const SITE = {
   basePath: "/portfolio-blogsite",
 
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "Edit page",
     url: "https://github.com/Ganesh-Macherla/portfolio-blogsite",
   },
