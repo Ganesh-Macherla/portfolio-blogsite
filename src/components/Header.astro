@@ -10,7 +10,7 @@ import { SITE } from "@/config";
 
 const { pathname } = Astro.url;
 
-const BASE = "/astro-paper";
+const BASE = SITE.basePath;
 
 // Remove trailing slash from current pathname if exists
 const currentPath =
