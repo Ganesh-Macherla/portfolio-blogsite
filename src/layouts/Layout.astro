@@ -143,8 +143,8 @@ const structuredData = {
 
 
 
-<!-- View transitions -->
-<ClientRouter />
+<!-- Faster page transitions -->
+<ClientRouter fallback="swap" />
 
 <!-- Prevent flash -->
 <script is:inline>
@@ -180,52 +180,7 @@ const structuredData = {
     <!-- Smooth cinematic animations -->
     <style is:global>
       :root {
-        --transition-duration: 0.45s;
-      }
-
-      /* ===== VIEW TRANSITIONS ===== */
-
-      ::view-transition-old(root),
-      ::view-transition-new(root) {
-        animation-duration: var(--transition-duration);
-        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-      }
-
-      ::view-transition-old(root) {
-        animation-name: smooth-fade-out;
-      }
-
-      ::view-transition-new(root) {
-        animation-name: smooth-fade-in;
-      }
-
-      @keyframes smooth-fade-out {
-        from {
-          opacity: 1;
-          transform: translateY(0px);
-          filter: blur(0px);
-        }
-
-        to {
-          opacity: 0;
-          transform: translateY(10px);
-          filter: blur(6px);
-        }
-      }
-
-      @keyframes smooth-fade-in {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-          filter: blur(6px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0px);
-          filter: blur(0px);
-        }
-      }
+       
 
       /* ===== GLOBAL LINK ANIMATIONS ===== */
 
@@ -288,23 +243,7 @@ const structuredData = {
         }
       }
 
-      /* ===== MAIN CONTENT LOAD ===== */
-
-      main {
-        animation: page-enter 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-
-      @keyframes page-enter {
-        from {
-          opacity: 0;
-          transform: translateY(16px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0px);
-        }
-      }
+     
 
       /* ===== PROJECT CARD HOVER ===== */
 
